@@ -39,7 +39,7 @@ function Index() {
             <a href="#porque" className="hover:text-primary transition">Por que personalizar</a>
             <a href="#produtos" className="hover:text-primary transition">Produtos</a>
           </nav>
-          <a href="#contato" className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-brand text-primary-foreground text-sm font-semibold shadow-soft hover:shadow-brand transition">
+          <a href="https://wa.me/47989264709" target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-brand text-primary-foreground text-sm font-semibold shadow-soft hover:shadow-brand transition">
             Solicitar orçamento <ArrowRight className="w-4 h-4" />
           </a>
         </div>
