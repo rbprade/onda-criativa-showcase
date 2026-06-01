@@ -3,7 +3,15 @@ import logo from "@/assets/logo.asset.json";
 import cupsLineup from "@/assets/cups-lineup.asset.json";
 import cupMockup from "@/assets/cup-mockup.asset.json";
 import printing from "@/assets/printing.asset.json";
-import { Sparkles, Target, TrendingUp, Award, Leaf, Recycle, ShieldCheck, Printer, ArrowRight } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
+import {
+  Sparkles, Target, TrendingUp, Award, Leaf, Recycle,
+  ShieldCheck, Printer, ArrowRight, MessageCircle, Send, User, Mail, Phone, FileText
+} from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
 
 export const Route = createFileRoute("/")({
   head: () => ({
