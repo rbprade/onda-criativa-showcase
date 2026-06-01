@@ -298,22 +298,60 @@ function Index() {
         </div>
       </section>
 
-      {/* CTA / FOOTER */}
+      {/* CTA / CONTATO */}
       <section id="contato" className="py-24 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-            Pronto para imprimir sua <span className="text-gradient-brand">marca</span>?
-          </h2>
-          <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            Envie sua arte ou conte sua ideia. Cuidamos do resto, do layout ao copo na sua mão.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4 justify-center">
-            <a href="https://wa.me/" className="px-8 py-4 rounded-full bg-gradient-brand text-primary-foreground font-semibold shadow-brand hover:scale-105 transition">
-              Falar no WhatsApp
-            </a>
-            <a href="mailto:contato@printondacriativa.com.br" className="px-8 py-4 rounded-full border-2 border-primary/20 font-semibold hover:bg-primary/5 transition">
-              contato@printondacriativa.com.br
-            </a>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Texto + CTA rápido */}
+            <div>
+              <span className="text-xs font-bold tracking-[0.3em] text-secondary uppercase">05 — Contato</span>
+              <h2 className="mt-3 text-4xl md:text-5xl font-bold leading-tight">
+                Solicite seu <span className="text-gradient-brand">orçamento</span>
+              </h2>
+              <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-md">
+                Preencha o formulário ao lado ou fale direto pelo WhatsApp. Respondemos rapidamente com opções e valores sob medida.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4">
+                <a
+                  href="https://wa.me/47989264709"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white font-semibold shadow-lg hover:scale-105 transition"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  Falar no WhatsApp
+                </a>
+                <a
+                  href="mailto:contato@printondacriativa.com.br"
+                  className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-primary/20 font-semibold hover:bg-primary/5 transition"
+                >
+                  <Mail className="w-5 h-5" />
+                  contato@printondacriativa.com.br
+                </a>
+              </div>
+
+              <div className="mt-10 rounded-3xl bg-gradient-soft border border-border p-8">
+                <h3 className="font-semibold text-lg">Por que solicitar um orçamento?</h3>
+                <ul className="mt-4 space-y-3 text-muted-foreground">
+                  <li className="flex items-start gap-3">
+                    <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>Atendimento personalizado para sua marca</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <TrendingUp className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>Entrega rápida em todo o Brasil</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <Sparkles className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                    <span>Arte inclusa e revisões sem custo</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Formulário */}
+            <ContactForm />
           </div>
         </div>
       </section>
