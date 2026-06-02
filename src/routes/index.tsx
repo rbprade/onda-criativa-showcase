@@ -183,7 +183,7 @@ function Index() {
               </a>
             </div>
             <div className="mt-10 flex items-center gap-8 text-sm">
-              <div><div className="text-2xl font-bold text-gradient-brand">+500</div><div className="text-muted-foreground">marcas atendidas</div></div>
+              <div><div className="text-2xl font-bold text-gradient-brand">+50</div><div className="text-muted-foreground">marcas atendidas</div></div>
               <div className="w-px h-10 bg-border" />
               <div><div className="text-2xl font-bold text-gradient-brand">100%</div><div className="text-muted-foreground">Brasil</div></div>
               <div className="w-px h-10 bg-border" />
