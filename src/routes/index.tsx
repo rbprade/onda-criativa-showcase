@@ -401,6 +401,164 @@ function Index() {
             </div>
           </div>
 
+
+          {/* Sacos de Lanche */}
+          <div id="sacos-lanche" className="mt-20 scroll-mt-24">
+            <div className="flex items-center gap-3 mb-8 flex-wrap">
+              <span className="px-5 py-2 rounded-full bg-accent text-accent-foreground text-sm font-bold tracking-wide">SACOS DE LANCHE</span>
+              <span className="text-muted-foreground text-sm">Modelos prontos para lanchonetes, food trucks e delivery</span>
+            </div>
+
+            {/* Desktop table */}
+            <div className="hidden md:block rounded-3xl border border-border bg-card shadow-soft overflow-hidden">
+              <table className="w-full text-left">
+                <thead className="bg-gradient-soft border-b border-border">
+                  <tr className="text-xs uppercase tracking-widest text-muted-foreground">
+                    <th className="py-4 px-6 font-bold">Modelo</th>
+                    <th className="py-4 px-6 font-bold">Medidas (mm)</th>
+                    <th className="py-4 px-6 font-bold">Medida industrial</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {[
+                    { m: "Pipoca 1", med: "A1 (A7,5 x B12,8 x C4)", ind: "25 x 14" },
+                    { m: "Pipoca 2", med: "A2 (A7,5 x B15,8 x C4)", ind: "25 x 17" },
+                    { m: "Fritas P", med: "XA1 (A7,5 x B12,8 x C5,5)", ind: "28 x 14" },
+                    { m: "Fritas M", med: "XA2 (A7,5 x B15,8 x C5,5)", ind: "28 x 17" },
+                    { m: "X-Salada", med: "C1 (A10 x B12,8 x C5,5)", ind: "34 x 14" },
+                    { m: "X-Largo", med: "F1 (A13 x B12,8 x C5,5)", ind: "40 x 14" },
+                    { m: "X-Tudo", med: "F2 (A13 x B15,8 x C5,5)", ind: "40 x 17" },
+                    { m: "X-Aberto", med: "PH2 (A17 x B15,8 x C0)", ind: "34 x 14" },
+                    { m: "Pastel Aberto", med: "XA1 (A7,5 x B12,8 x C5,5)", ind: "28 x 14" },
+                    { m: "0,5 kg Baixo", med: "C3 (A10 x B17,8 x C6)", ind: "34 x 19" },
+                    { m: "0,5 kg Alto", med: "C4 (A10 x B19 x C6)", ind: "34 x 21" },
+                    { m: "01 kg", med: "C7 (A10 x B26,8 x C6)", ind: "34 x 28" },
+                    { m: "02 kg Baixo", med: "F5 (A13 x B22,8 x C6)", ind: "40 x 24" },
+                    { m: "02 kg Alto", med: "F7 (A13 x B26,8 x C6)", ind: "40 x 28" },
+                  ].map((row, i) => (
+                    <tr key={row.m} className={`border-b border-border/50 last:border-0 hover:bg-muted/40 transition ${i % 2 === 1 ? "bg-muted/20" : ""}`}>
+                      <td className="py-4 px-6 font-bold text-foreground">{row.m}</td>
+                      <td className="py-4 px-6 text-sm text-muted-foreground font-mono">{row.med}</td>
+                      <td className="py-4 px-6">
+                        <span className="inline-block px-3 py-1 rounded-full border border-accent/40 text-accent-foreground bg-accent/10 text-xs font-bold">{row.ind}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile cards */}
+            <div className="md:hidden grid gap-3">
+              {[
+                { m: "Pipoca 1", med: "A1 (A7,5 x B12,8 x C4)", ind: "25 x 14" },
+                { m: "Pipoca 2", med: "A2 (A7,5 x B15,8 x C4)", ind: "25 x 17" },
+                { m: "Fritas P", med: "XA1 (A7,5 x B12,8 x C5,5)", ind: "28 x 14" },
+                { m: "Fritas M", med: "XA2 (A7,5 x B15,8 x C5,5)", ind: "28 x 17" },
+                { m: "X-Salada", med: "C1 (A10 x B12,8 x C5,5)", ind: "34 x 14" },
+                { m: "X-Largo", med: "F1 (A13 x B12,8 x C5,5)", ind: "40 x 14" },
+                { m: "X-Tudo", med: "F2 (A13 x B15,8 x C5,5)", ind: "40 x 17" },
+                { m: "X-Aberto", med: "PH2 (A17 x B15,8 x C0)", ind: "34 x 14" },
+                { m: "Pastel Aberto", med: "XA1 (A7,5 x B12,8 x C5,5)", ind: "28 x 14" },
+                { m: "0,5 kg Baixo", med: "C3 (A10 x B17,8 x C6)", ind: "34 x 19" },
+                { m: "0,5 kg Alto", med: "C4 (A10 x B19 x C6)", ind: "34 x 21" },
+                { m: "01 kg", med: "C7 (A10 x B26,8 x C6)", ind: "34 x 28" },
+                { m: "02 kg Baixo", med: "F5 (A13 x B22,8 x C6)", ind: "40 x 24" },
+                { m: "02 kg Alto", med: "F7 (A13 x B26,8 x C6)", ind: "40 x 28" },
+              ].map((row) => (
+                <div key={row.m} className="rounded-2xl border border-border bg-card p-4 flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="font-bold">{row.m}</div>
+                    <div className="text-xs text-muted-foreground font-mono truncate">{row.med}</div>
+                  </div>
+                  <span className="shrink-0 inline-block px-3 py-1 rounded-full border border-accent/40 text-accent-foreground bg-accent/10 text-xs font-bold">{row.ind}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Sacos de Padaria */}
+          <div id="sacos-padaria" className="mt-20 scroll-mt-24">
+            <div className="flex items-center gap-3 mb-8 flex-wrap">
+              <span className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold tracking-wide">SACOS DE PADARIA</span>
+              <span className="text-muted-foreground text-sm">Capacidades de 0,5 kg a 25 kg</span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+              {["0,5 kg", "01 kg", "02 kg", "03 kg", "05 kg", "7,5 kg", "10 kg", "15 kg", "20 kg", "25 kg"].map((cap) => (
+                <div key={cap} className="group rounded-2xl border border-border bg-gradient-to-b from-card to-muted p-5 text-center hover:shadow-brand hover:border-primary/30 hover:-translate-y-0.5 transition-all">
+                  <div className="text-xs uppercase tracking-widest text-muted-foreground">Modelo</div>
+                  <div className="mt-1 text-xl font-bold text-gradient-brand">{cap}</div>
+                </div>
+              ))}
+            </div>
+            <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { icon: ShieldCheck, label: "Resistência reforçada" },
+                { icon: Printer, label: "Impressão personalizada" },
+                { icon: Leaf, label: "Papel kraft natural" },
+                { icon: Recycle, label: "Recicláveis" },
+              ].map(({ icon: Icon, label }) => (
+                <div key={label} className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <Icon className="w-5 h-5 text-primary shrink-0" />
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Guardanapos */}
+          <div id="guardanapos" className="mt-20 scroll-mt-24">
+            <div className="flex items-center gap-3 mb-8 flex-wrap">
+              <span className="px-5 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-bold tracking-wide">GUARDANAPOS</span>
+              <span className="text-muted-foreground text-sm">Linha Sachê — sua marca em cada mesa</span>
+            </div>
+
+            <div className="grid lg:grid-cols-3 gap-6">
+              {/* Sizes */}
+              <div className="lg:col-span-2 grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  { t: "P", med: "A20 x B20 cm" },
+                  { t: "M", med: "A14 x B30 cm" },
+                  { t: "G", med: "A16 x B30 cm" },
+                  { t: "GG", med: "A20 x B30 cm" },
+                ].map((s) => (
+                  <div key={s.t} className="rounded-2xl border border-border bg-card p-6 text-center hover:shadow-brand hover:border-secondary/30 transition-all">
+                    <div className="mx-auto w-16 h-16 rounded-xl bg-white border-2 border-secondary/30 shadow-soft grid place-items-center text-2xl font-bold text-secondary">
+                      {s.t}
+                    </div>
+                    <div className="mt-3 text-sm text-muted-foreground font-mono">{s.med}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Guia de medidas */}
+              <div className="rounded-3xl border border-border bg-gradient-soft p-6 flex flex-col items-center justify-center text-center">
+                <div className="text-xs font-bold tracking-[0.3em] text-secondary uppercase">Guia de medidas</div>
+                <svg viewBox="0 0 120 120" className="w-32 h-32 mt-4 text-foreground" fill="none" stroke="currentColor" strokeWidth="2">
+                  <rect x="20" y="20" width="80" height="80" rx="4" className="text-border" />
+                  <line x1="20" y1="20" x2="100" y2="100" strokeDasharray="3 3" className="text-secondary" />
+                  <text x="108" y="62" fontSize="14" fill="currentColor" stroke="none" className="font-bold">A</text>
+                  <text x="58" y="116" fontSize="14" fill="currentColor" stroke="none" className="font-bold">B</text>
+                </svg>
+                <p className="mt-3 text-xs text-muted-foreground max-w-[14rem]">A = altura · B = largura. Medidas em centímetros.</p>
+              </div>
+            </div>
+
+            {/* Opções disponíveis */}
+            <div className="mt-8 rounded-3xl border border-border bg-card p-6 md:p-8">
+              <div className="text-xs font-bold tracking-[0.3em] text-secondary uppercase mb-4">Opções disponíveis</div>
+              <div className="flex flex-wrap gap-4">
+                <div className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-border" style={{ background: "linear-gradient(135deg, #c9a878 0%, #a07a4a 100%)" }}>
+                  <span className="font-bold text-white drop-shadow">KRAFT</span>
+                </div>
+                <div className="flex items-center gap-3 px-5 py-3 rounded-2xl border border-border bg-white">
+                  <span className="font-bold text-foreground">BRANCO MONOLÚCIDO</span>
+                </div>
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">Disponíveis para todas as medidas.</p>
+            </div>
+          </div>
+
           {/* Mockup destaque */}
           <div className="mt-20 rounded-3xl overflow-hidden border border-border bg-card shadow-soft">
             <img src={cupMockup.url} alt="Exemplo de arte personalizada — frente e verso" className="w-full h-auto" />
