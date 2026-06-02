@@ -433,11 +433,11 @@ function Index() {
                   Falar no WhatsApp
                 </a>
                 <a
-                  href="mailto:contato@printondacriativa.com.br"
+                  href="mailto:copoprint.adm@gmail.com"
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full border-2 border-primary/20 font-semibold hover:bg-primary/5 transition"
                 >
                   <Mail className="w-5 h-5" />
-                  contato@printondacriativa.com.br
+                  copoprint.adm@gmail.com
                 </a>
               </div>
 
