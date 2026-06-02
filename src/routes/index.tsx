@@ -3,6 +3,17 @@ import logo from "@/assets/logo.asset.json";
 import cupsLineup from "@/assets/cups-lineup.asset.json";
 import cupMockup from "@/assets/cup-mockup.asset.json";
 import printing from "@/assets/printing.asset.json";
+import cup60 from "@/assets/cup-60ml.png.asset.json";
+import cup110 from "@/assets/cup-110ml.png.asset.json";
+import cup200 from "@/assets/cup-200ml.png.asset.json";
+import cup270 from "@/assets/cup-270ml.png.asset.json";
+
+const PAPER_CUPS = [
+  { size: "60 ml", img: cup60.url },
+  { size: "110 ml", img: cup110.url },
+  { size: "200 ml", img: cup200.url },
+  { size: "270 ml", img: cup270.url },
+];
 import { useState } from "react";
 import { toast } from "sonner";
 import {
@@ -369,17 +380,16 @@ function Index() {
               <span className="px-5 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-bold tracking-wide">COPOS DE PAPEL</span>
               <span className="text-muted-foreground text-sm">Impressão de alta definição</span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-              {["60 ml", "110 ml", "200 ml", "270 ml"].map((size, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 items-end">
+              {PAPER_CUPS.map(({ size, img }, i) => (
                 <div key={size} className="group relative rounded-3xl border border-border bg-gradient-to-b from-card to-muted p-6 text-center hover:shadow-brand hover:border-secondary/30 transition-all">
-                  <div className="aspect-[3/4] grid place-items-center">
-                    <div
-                      className="bg-white border-2 border-secondary/30 shadow-soft rounded-b-full rounded-t-lg"
-                      style={{
-                        width: `${45 + i * 12}%`,
-                        height: `${50 + i * 12}%`,
-                        clipPath: "polygon(15% 0, 85% 0, 95% 100%, 5% 100%)",
-                      }}
+                  <div className="aspect-[3/4] grid place-items-end justify-center">
+                    <img
+                      src={img}
+                      alt={`Copo de papel kraft personalizado ${size}`}
+                      loading="lazy"
+                      className="object-contain drop-shadow-md transition-transform group-hover:-translate-y-1"
+                      style={{ height: `${60 + i * 12}%`, maxHeight: "100%" }}
                     />
                   </div>
                   <div className="mt-2 inline-block px-4 py-1.5 rounded-full border border-secondary/30 text-secondary font-bold text-sm">{size}</div>
