@@ -240,7 +240,7 @@ function Index() {
               <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
               <div className="absolute bottom-6 left-6 right-6 text-primary-foreground">
                 <div className="text-xs uppercase tracking-widest opacity-80">Bastidores</div>
-                <div className="text-xl font-bold">Tampografia artesanal, precisão industrial.</div>
+                <div className="text-xl font-bold">A sua ideia impressa em cada detalhe.</div>
               </div>
             </div>
           </div>
