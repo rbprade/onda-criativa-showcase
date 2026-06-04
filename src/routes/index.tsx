@@ -7,6 +7,17 @@ import cup60 from "@/assets/cup-60ml.png.asset.json";
 import cup110 from "@/assets/cup-110ml.png.asset.json";
 import cup200 from "@/assets/cup-200ml.png.asset.json";
 import cup270 from "@/assets/cup-270ml.png.asset.json";
+import plastic330 from "@/assets/plastic-cup-330ml.png.asset.json";
+import plastic440 from "@/assets/plastic-cup-440ml.png.asset.json";
+import plastic550 from "@/assets/plastic-cup-550ml.png.asset.json";
+import plastic770 from "@/assets/plastic-cup-770ml.png.asset.json";
+
+const PLASTIC_CUPS = [
+  { size: "330 ml", img: plastic330.url },
+  { size: "440 ml", img: plastic440.url },
+  { size: "550 ml", img: plastic550.url },
+  { size: "770 ml", img: plastic770.url },
+];
 
 const PAPER_CUPS = [
   { size: "60 ml", img: cup60.url },
@@ -342,17 +353,16 @@ function Index() {
               <span className="px-5 py-2 rounded-full bg-primary text-primary-foreground text-sm font-bold tracking-wide">COPOS PLÁSTICOS</span>
               <span className="text-muted-foreground text-sm">Transparência que valoriza sua marca</span>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
-              {["330 ml", "440 ml", "550 ml", "770 ml"].map((size, i) => (
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-5 items-end">
+              {PLASTIC_CUPS.map(({ size, img }, i) => (
                 <div key={size} className="group relative rounded-3xl border border-border bg-gradient-to-b from-card to-muted p-6 text-center hover:shadow-brand hover:border-primary/30 transition-all">
-                  <div className="aspect-[3/4] grid place-items-center">
-                    <div
-                      className="bg-gradient-to-b from-primary/10 to-primary/30 rounded-b-full rounded-t-lg border-2 border-primary/20 backdrop-blur"
-                      style={{
-                        width: `${55 + i * 10}%`,
-                        height: `${55 + i * 10}%`,
-                        clipPath: "polygon(15% 0, 85% 0, 95% 100%, 5% 100%)",
-                      }}
+                  <div className="aspect-[3/4] grid place-items-end justify-center">
+                    <img
+                      src={img}
+                      alt={`Copo plástico personalizado ${size}`}
+                      loading="lazy"
+                      className="object-contain drop-shadow-md transition-transform group-hover:-translate-y-1"
+                      style={{ height: `${60 + i * 12}%`, maxHeight: "100%" }}
                     />
                   </div>
                   <div className="mt-2 inline-block px-4 py-1.5 rounded-full border border-primary/30 text-primary font-bold text-sm">{size}</div>
